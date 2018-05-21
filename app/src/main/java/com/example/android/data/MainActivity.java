@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.android.data.model.DataItem;
+
 public class MainActivity extends AppCompatActivity {
 
         TextView tvOut;
@@ -14,8 +16,10 @@ public class MainActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
+            DataItem item = new DataItem(null,"My Item Name" , "My Descripotion","a category ",1,9.95,"apple_pie.jpg");
+
             tvOut = (TextView) findViewById(R.id.out);
-            tvOut.setText(R.string.ready_to_code);
+            tvOut.setText(item.toString());
 
         }
 }
